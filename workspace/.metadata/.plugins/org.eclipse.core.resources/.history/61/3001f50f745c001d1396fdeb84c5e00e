@@ -1,0 +1,9 @@
+package com.formacionbdi.springboot.app.productos.controllers;
+
+import org.sprin
+@RestController
+public class ProductoController {
+
+	@Autowired
+	private IProductoService productoService
+}
