@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.formacionbdi.springboot.app.item.models.Item;
-import com.formacionbdi.springboot.app.item.models.Producto;
+import com.formacionbdi.springboot.app.commons.models.entity.Producto;
 
 @Service("serviceRestTemplate")
 public class ItemServiceImpl implements ItemService {
@@ -36,7 +36,7 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public Producto save(Producto producto) {
 		HttpEntity<Producto> body = new HttpEntity<Producto>(producto);
-		ResponseEntity<Producto> response = clienteRest.exchange("http://servico-productos/crear", HttpMethod.POST, body, Producto.class);
+		ResponseEntity<Producto> response = clienteRest.exchange("http://servicio-productos/crear", HttpMethod.POST, body, Producto.class);
 		Producto productoResponse = response.getBody();
 		return productoResponse;
 	}
